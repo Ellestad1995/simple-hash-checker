@@ -1,0 +1,14 @@
+<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       
+        mc:Ignorable="d"
+        Name="Window" WindowStyle="None"
+        ResizeMode="NoResize" ShowInTaskbar="False" 
+        Title="Simple file hash checker" Height="350" Width="525">
+    <Grid Background="#FF484F6E">
+        <Label Name="filename" Content="Filename" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="505"/>
+        <TextBox Name="InputFileHash" HorizontalAlignment="Center" Margin="0,84,0,0" Text="Input for filehash" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" Background="{x:Null}" FontSize="14" SelectionTextBrush="{x:Null}"/>
+        <TextBox Name="OutputFileHash" HorizontalAlignment="Center" Margin="0,115,0,0" Text="Output filehash" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" Background="{x:Null}" FontSize="14"  Height="209"/>
+    </Grid>
+</Window>
