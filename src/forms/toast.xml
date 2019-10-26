@@ -1,0 +1,29 @@
+
+<toast>
+    <visual>
+      <binding template="ToastGeneric">
+        <text Name="ToastTitle">$Title</text>
+        <text Name="ToastMessage">$Message</text>
+        <image Name="ToastLogo" src="$Logo" placement="appLogoOverride" hint-crop="circle" />
+      </binding>
+    </visual>
+    <actions>
+        <input id="filehashInput" type="text" placeHolderContent="Paste the filehash here"/>
+
+        <action
+            content="Check filehash"
+            arguments="action=viewdetails&amp;contentId=351"
+            activationType="foreground"/>
+        <action
+            content="verify filehash"
+            arguments="action=verify&amp;convId=9318"
+            activationType="background"
+            hint-inputId="textBox"
+            imageUri="Assets/Reply.png"/>
+        <action
+            content="Det er sikkert trygt"
+            arguments="action=viewdetails&amp;contentId=351"
+            activationType="foreground"/>
+    </actions>
+    <audio src="ms-winsoundevent:Notification.Default" />
+  </toast>
