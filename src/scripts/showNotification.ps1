@@ -55,7 +55,8 @@ Function Show-NotificationToast{
     <input id="filehashInput" type="text" placeHolderContent="Paste the filehash here"/>
     <action
         content="verify filehash"
-        arguments="pwsh:D:\Documents\simple-hash-checker\src\scripts\handleActions.ps1"
+        arguments="pwsh:&amp;"
+        hint-inputId="filehashInput"
         activationType="protocol"/>
 
     <action activationType="system" arguments="dismiss" content=""/>
@@ -63,6 +64,8 @@ Function Show-NotificationToast{
 <audio src="ms-winsoundevent:Notification.Default" />
 </toast>
 "@
+# TODO: Splitte pwsh fra filnavnet for å kjøre powershell script.
+# alternativt se hvordan man lager en installer som kan ordne dette
 
 # C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -executionpolicy bypass -File D:\Documents\simple-hash-checker\src\scripts\handleActions.ps1
     $ToastXml = [Windows.Data.Xml.Dom.XmlDocument]::new()
