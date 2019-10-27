@@ -2,10 +2,22 @@
     .SYNOPSIS
         Handle user interactions with the actions on the notifications
 #>
-# Working reg: "C:\Program Files\PowerShell\6\pwsh.exe" -noexit -executionpolicy bypass -File D:\Documents\simple-hash-checker\src\scripts\handleActions.ps1
-Write-Host "Does it work??"
-#Get-process | Out-File -FilePath detfunka.txt
+Param($Argument="") # If the protocol is ran you always at least get the protocol name as an argument. (if using the %1)
+[String]
+$Argument 
 
-#$IE=new-object -com internetexplorer.application
-#$IE.navigate2("www.microsoft.com")
-#$IE.visible=$true
+function Handle-Actions { # The cmdlet 'Handle-Actions' uses an unapproved verb. 
+    [cmdletBinding()]
+    param(
+        [Parameter(Mandatory=$false, Position=0)]
+        [String]
+        $Argument 
+    )
+    $Argumuments = $Argument.Split([Char]0x0026) # Splits by `?`
+    #Argumnets is now in an array, do whatever you need to next.
+    $Argumuments | %{
+        Write-Host $_ # Writes each argument that was seperated by ? to a line
+    }
+}
+
+Handle-Actions -Argument $Argument
